@@ -8,6 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.fruit.exception.EmptyBasketException;
 import com.fruit.one.FruitBasket;
 import com.fruit.one.FruitConstants;
 
@@ -25,7 +26,7 @@ public class FruitBasketTest {
 
 	
 		@Test
-		public void testGetBasketValueWithAllFruits() {
+		public void testGetBasketValueWithAllFruits() throws EmptyBasketException {
 			mapFruit.put(FruitConstants.fruitLemon, 2f);
 			mapFruit.put(FruitConstants.fruitBanana, 1.5f);
 			mapFruit.put(FruitConstants.fruitOrange,1.0f);
@@ -40,7 +41,7 @@ public class FruitBasketTest {
 		}
 		
 		@Test
-		public void testGetBasketValueWithFourFruits() {
+		public void testGetBasketValueWithFourFruits() throws EmptyBasketException {
 			mapFruit.put(FruitConstants.fruitLemon, 2f);
 			mapFruit.put(FruitConstants.fruitBanana, 1.5f);
 			mapFruit.put(FruitConstants.fruitApple,2.5f);
@@ -54,7 +55,7 @@ public class FruitBasketTest {
 		}
 		
 		@Test
-		public void testGetBasketValueWithThreeFruits() {
+		public void testGetBasketValueWithThreeFruits() throws EmptyBasketException {
 			mapFruit.put(FruitConstants.fruitOrange,-1.0f);
 			mapFruit.put(FruitConstants.fruitApple,2.5f);
 			mapFruit.put(FruitConstants.fruitPeach, 0.5f);
@@ -67,7 +68,7 @@ public class FruitBasketTest {
 		}
 		
 		@Test
-		public void testGetBasketValueWithTwoFruits() {
+		public void testGetBasketValueWithTwoFruits() throws EmptyBasketException {
 			mapFruit.put(FruitConstants.fruitLemon, 2f);
 			mapFruit.put(FruitConstants.fruitBanana, 1.5f);
 			 
@@ -79,7 +80,7 @@ public class FruitBasketTest {
 		}
 		
 		@Test
-		public void testGetBasketValueWithOneFruit() {
+		public void testGetBasketValueWithOneFruit() throws EmptyBasketException {
 			
 			mapFruit.put(FruitConstants.fruitPeach, 1.5f);
 			 
@@ -91,8 +92,8 @@ public class FruitBasketTest {
 		}
 	
 		
-		@Test
-		public void testGetBasketValueWithNoFruit() {
+		@Test(expected=EmptyBasketException.class)
+		public void testGetBasketValueWithNoFruit() throws EmptyBasketException {
 			
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);

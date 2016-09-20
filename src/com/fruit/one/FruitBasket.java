@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.fruit.exception.EmptyBasketException;
+
 public class FruitBasket {
 
 	
@@ -17,7 +19,7 @@ public class FruitBasket {
 	* @param basket A map containing key as fruit and value as quantity
 	* @return float Returns the total value of basket.
 	*/
-	public float getBasketValue(HashMap<String,Float> basket){
+	public float getBasketValue(HashMap<String,Float> basket) throws EmptyBasketException{
 		
 		float totalCostOfBucket=0f;
 		
@@ -65,7 +67,7 @@ public class FruitBasket {
 			return totalCostOfBucket;
 		}
 		else{
-			return totalCostOfBucket;
+			throw new EmptyBasketException("No Fruit present");
 		}
 	
 		
