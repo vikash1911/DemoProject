@@ -1,4 +1,4 @@
-package com.test.one;
+package com.fruit.one;
 
 public class FruitConstants {
 	

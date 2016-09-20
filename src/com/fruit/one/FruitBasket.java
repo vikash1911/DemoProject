@@ -1,4 +1,4 @@
-package com.test.one;
+package com.fruit.one;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,18 +6,6 @@ import java.util.Map.Entry;
 
 public class FruitBasket {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		HashMap<String, Float> mapFruit = new HashMap<String,Float>();
-		mapFruit.put("Bananas", null);
-		mapFruit.put("Apples", null);
-		mapFruit.put("Oranges", null);
-		mapFruit.put(null, null);
-		mapFruit.put("Peaches", null);
-		
-		/*double value=getBasketValue(mapFruit);
-		System.out.println(value);*/
-	}
 	
 	
 	/**
