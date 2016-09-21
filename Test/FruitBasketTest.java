@@ -14,27 +14,27 @@ import com.fruit.one.FruitConstants;
 
 public class FruitBasketTest {
 
-	private HashMap<String, Float> mapFruit=null;
+	private HashMap<String, Integer> mapFruit=null;
 	private FruitBasket fruitBasket = null;
 	
 		@Before  
 	   public void setUp() throws Exception {
 		
-		mapFruit = new HashMap<String,Float>();
+		mapFruit = new HashMap<String,Integer>();
 		fruitBasket=new FruitBasket();
 	    } 
 
 	
 		@Test
 		public void testGetBasketValueWithAllFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.FRUIT_LEMON, 2f);
-			mapFruit.put(FruitConstants.FRUIT_BANANA, 1.5f);
-			mapFruit.put(FruitConstants.FRUIT_ORANGE,1.0f);
-			mapFruit.put(FruitConstants.FRUIT_APPLE,2.5f);
-			mapFruit.put(FruitConstants.FRUIT_PEACH, 0.5f);
+			mapFruit.put(FruitConstants.FRUIT_LEMON, 2);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, 1);
+			mapFruit.put(FruitConstants.FRUIT_ORANGE,3);
+			mapFruit.put(FruitConstants.FRUIT_APPLE,2);
+			mapFruit.put(FruitConstants.FRUIT_PEACH, 5);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
-			 float expectedValue=945.0f;
+			 float expectedValue=119.0f;
 
 			 assertNotNull(actualValue);
 			 assertEquals(expectedValue, actualValue, 0);
@@ -42,13 +42,13 @@ public class FruitBasketTest {
 		
 		@Test
 		public void testGetBasketValueWithFourFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.FRUIT_LEMON, 2f);
-			mapFruit.put(FruitConstants.FRUIT_BANANA, 1.5f);
-			mapFruit.put(FruitConstants.FRUIT_APPLE,2.5f);
-			mapFruit.put(FruitConstants.FRUIT_PEACH, 0.5f);
+			mapFruit.put(FruitConstants.FRUIT_LEMON, 2);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, 5);
+			mapFruit.put(FruitConstants.FRUIT_APPLE,2);
+			mapFruit.put(FruitConstants.FRUIT_PEACH, 1);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
-			 float expectedValue=885.0f;
+			 float expectedValue=73.0f;
 
 			 assertNotNull(actualValue);
 			 assertEquals(expectedValue, actualValue, 0);
@@ -56,12 +56,12 @@ public class FruitBasketTest {
 		
 		@Test
 		public void testGetBasketValueWithThreeFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.FRUIT_ORANGE,-1.0f);
-			mapFruit.put(FruitConstants.FRUIT_APPLE,2.5f);
-			mapFruit.put(FruitConstants.FRUIT_PEACH, 0.5f);
+			mapFruit.put(FruitConstants.FRUIT_ORANGE,2);
+			mapFruit.put(FruitConstants.FRUIT_APPLE,2);
+			mapFruit.put(FruitConstants.FRUIT_PEACH,3);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
-			 float expectedValue=510.0f;
+			 float expectedValue=58.0f;
 
 			 assertNotNull(actualValue);
 			 assertEquals(expectedValue, actualValue, 0);
@@ -69,11 +69,11 @@ public class FruitBasketTest {
 		
 		@Test
 		public void testGetBasketValueWithTwoFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.FRUIT_LEMON, 2f);
-			mapFruit.put(FruitConstants.FRUIT_BANANA, 1.5f);
+			mapFruit.put(FruitConstants.FRUIT_LEMON, 2);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, 4);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
-			 float expectedValue=375.0f;
+			 float expectedValue=36.0f;
 
 			 assertNotNull(actualValue);
 			 assertEquals(expectedValue, actualValue, 0);
@@ -82,10 +82,10 @@ public class FruitBasketTest {
 		@Test
 		public void testGetBasketValueWithOneFruit() throws EmptyBasketException {
 			
-			mapFruit.put(FruitConstants.FRUIT_PEACH, 1.5f);
+			mapFruit.put(FruitConstants.FRUIT_PEACH, 3);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
-			 float expectedValue=180.0f;
+			 float expectedValue=36.0f;
 
 			 assertNotNull(actualValue);
 			 assertEquals(expectedValue, actualValue, 0);
@@ -106,8 +106,8 @@ public class FruitBasketTest {
 		@Test
 		public void testGetBasketValueWithNegativeValue() throws EmptyBasketException {
 			
-			mapFruit.put(FruitConstants.FRUIT_LEMON, -2f);
-			mapFruit.put(FruitConstants.FRUIT_BANANA, -1.5f);
+			mapFruit.put(FruitConstants.FRUIT_LEMON, -2);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, -1);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
 			 float expectedValue=0.0f;

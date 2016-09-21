@@ -18,41 +18,41 @@ public class FruitBasket {
 	* @param basket A map containing key as fruit and value as quantity
 	* @return float Returns the total value of basket.
 	*/
-	public float getBasketValue(HashMap<String,Float> basket) throws EmptyBasketException{
+	public float getBasketValue(HashMap<String,Integer> basket) throws EmptyBasketException{
 		
 		float totalCostOfBucket=0f;
 		
 		if(basket!=null && basket.size()>0){
 			try{
 				float priceOfFruit=0f;
-				for(Entry<String, Float> e: basket.entrySet()){
+				for(Entry<String, Integer> e: basket.entrySet()){
 					if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_BANANA)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.BANANA_PRICE_PER_DOZEN*e.getValue();
+							priceOfFruit=FruitConstants.BANANA_PRICE*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}
 					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_APPLE)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.APPLE_PRICE_PER_KILO*e.getValue();
+							priceOfFruit=FruitConstants.APPLE_PRICE*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}
 					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_LEMON)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.LEMON_PRICE_PER_KILO*e.getValue();
+							priceOfFruit=FruitConstants.LEMON_PRICE*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;	
 						}
 					}
 					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_ORANGE)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.ORANGE_PRICE_PER_KILO*e.getValue();
+							priceOfFruit=FruitConstants.ORANGE_PRICE*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}
 					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_PEACH)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.PEACH_PRICE_PER_KILO*e.getValue();
+							priceOfFruit=FruitConstants.PEACH_PRICE*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}
@@ -72,5 +72,6 @@ public class FruitBasket {
 		
 		
 	}
+	
 
 }
