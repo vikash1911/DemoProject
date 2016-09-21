@@ -1,7 +1,6 @@
 package com.fruit.one;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import com.fruit.exception.EmptyBasketException;
@@ -27,33 +26,33 @@ public class FruitBasket {
 			try{
 				float priceOfFruit=0f;
 				for(Entry<String, Float> e: basket.entrySet()){
-					if(e.getKey()!=null && e.getKey().equals(FruitConstants.fruitBanana)){
+					if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_BANANA)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.bananaPriceForDozen*e.getValue();
+							priceOfFruit=FruitConstants.BANANA_PRICE_PER_DOZEN*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}
-					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.fruitApple)){
+					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_APPLE)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.applePriceForKilo*e.getValue();
+							priceOfFruit=FruitConstants.APPLE_PRICE_PER_KILO*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}
-					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.fruitLemon)){
+					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_LEMON)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.lemonPriceForKilo*e.getValue();
+							priceOfFruit=FruitConstants.LEMON_PRICE_PER_KILO*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;	
 						}
 					}
-					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.fruitOrange)){
+					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_ORANGE)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.orangePriceForKilo*e.getValue();
+							priceOfFruit=FruitConstants.ORANGE_PRICE_PER_KILO*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}
-					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.fruitPeach)){
+					else if(e.getKey()!=null && e.getKey().equals(FruitConstants.FRUIT_PEACH)){
 						if(e.getValue()!=null && e.getValue()>0){
-							priceOfFruit=FruitConstants.peachPriceForKilo*e.getValue();
+							priceOfFruit=FruitConstants.PEACH_PRICE_PER_KILO*e.getValue();
 							totalCostOfBucket=totalCostOfBucket+priceOfFruit;
 						}
 					}

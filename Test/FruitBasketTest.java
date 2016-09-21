@@ -27,11 +27,11 @@ public class FruitBasketTest {
 	
 		@Test
 		public void testGetBasketValueWithAllFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.fruitLemon, 2f);
-			mapFruit.put(FruitConstants.fruitBanana, 1.5f);
-			mapFruit.put(FruitConstants.fruitOrange,1.0f);
-			mapFruit.put(FruitConstants.fruitApple,2.5f);
-			mapFruit.put(FruitConstants.fruitPeach, 0.5f);
+			mapFruit.put(FruitConstants.FRUIT_LEMON, 2f);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, 1.5f);
+			mapFruit.put(FruitConstants.FRUIT_ORANGE,1.0f);
+			mapFruit.put(FruitConstants.FRUIT_APPLE,2.5f);
+			mapFruit.put(FruitConstants.FRUIT_PEACH, 0.5f);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
 			 float expectedValue=945.0f;
@@ -42,10 +42,10 @@ public class FruitBasketTest {
 		
 		@Test
 		public void testGetBasketValueWithFourFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.fruitLemon, 2f);
-			mapFruit.put(FruitConstants.fruitBanana, 1.5f);
-			mapFruit.put(FruitConstants.fruitApple,2.5f);
-			mapFruit.put(FruitConstants.fruitPeach, 0.5f);
+			mapFruit.put(FruitConstants.FRUIT_LEMON, 2f);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, 1.5f);
+			mapFruit.put(FruitConstants.FRUIT_APPLE,2.5f);
+			mapFruit.put(FruitConstants.FRUIT_PEACH, 0.5f);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
 			 float expectedValue=885.0f;
@@ -56,9 +56,9 @@ public class FruitBasketTest {
 		
 		@Test
 		public void testGetBasketValueWithThreeFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.fruitOrange,-1.0f);
-			mapFruit.put(FruitConstants.fruitApple,2.5f);
-			mapFruit.put(FruitConstants.fruitPeach, 0.5f);
+			mapFruit.put(FruitConstants.FRUIT_ORANGE,-1.0f);
+			mapFruit.put(FruitConstants.FRUIT_APPLE,2.5f);
+			mapFruit.put(FruitConstants.FRUIT_PEACH, 0.5f);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
 			 float expectedValue=510.0f;
@@ -69,8 +69,8 @@ public class FruitBasketTest {
 		
 		@Test
 		public void testGetBasketValueWithTwoFruits() throws EmptyBasketException {
-			mapFruit.put(FruitConstants.fruitLemon, 2f);
-			mapFruit.put(FruitConstants.fruitBanana, 1.5f);
+			mapFruit.put(FruitConstants.FRUIT_LEMON, 2f);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, 1.5f);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
 			 float expectedValue=375.0f;
@@ -82,7 +82,7 @@ public class FruitBasketTest {
 		@Test
 		public void testGetBasketValueWithOneFruit() throws EmptyBasketException {
 			
-			mapFruit.put(FruitConstants.fruitPeach, 1.5f);
+			mapFruit.put(FruitConstants.FRUIT_PEACH, 1.5f);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
 			 float expectedValue=180.0f;
@@ -95,6 +95,19 @@ public class FruitBasketTest {
 		@Test(expected=EmptyBasketException.class)
 		public void testGetBasketValueWithNoFruit() throws EmptyBasketException {
 			
+			 
+			 float actualValue=fruitBasket.getBasketValue(mapFruit);
+			 float expectedValue=0.0f;
+
+			 assertNotNull(actualValue);
+			 assertEquals(expectedValue, actualValue, 0);
+		}
+		
+		@Test
+		public void testGetBasketValueWithNegativeValue() throws EmptyBasketException {
+			
+			mapFruit.put(FruitConstants.FRUIT_LEMON, -2f);
+			mapFruit.put(FruitConstants.FRUIT_BANANA, -1.5f);
 			 
 			 float actualValue=fruitBasket.getBasketValue(mapFruit);
 			 float expectedValue=0.0f;

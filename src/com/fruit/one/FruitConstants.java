@@ -2,15 +2,15 @@ package com.fruit.one;
 
 public class FruitConstants {
 	
-	public static final String fruitBanana = "Bananas";
-	public static final String fruitApple = "Apples";
-	public static final String fruitLemon = "Lemons";
-	public static final String fruitPeach = "Peaches";
-	public static final String fruitOrange = "Oranges";
+	public static final String FRUIT_BANANA = "Bananas";
+	public static final String FRUIT_APPLE = "Apples";
+	public static final String FRUIT_LEMON = "Lemons";
+	public static final String FRUIT_PEACH = "Peaches";
+	public static final String FRUIT_ORANGE = "Oranges";
 	
-	public static final float bananaPriceForDozen = 50f;
-	public static final float applePriceForKilo = 180f;
-	public static final float orangePriceForKilo = 60f;
-	public static final float peachPriceForKilo = 120f;
-	public static final float lemonPriceForKilo = 150f;
+	public static final float BANANA_PRICE_PER_DOZEN = 50f;
+	public static final float APPLE_PRICE_PER_KILO = 180f;
+	public static final float ORANGE_PRICE_PER_KILO = 60f;
+	public static final float PEACH_PRICE_PER_KILO = 120f;
+	public static final float LEMON_PRICE_PER_KILO = 150f;
 }
